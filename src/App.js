@@ -1,4 +1,5 @@
-export default function App(){
-    return(<h1>Hellos</h1>)
-}
+import Products from "./componenets/Products";
 
+export default function App() {
+  return <Products/>;
+}
