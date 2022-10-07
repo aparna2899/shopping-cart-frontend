@@ -2,6 +2,7 @@ import { useState } from 'react';
 import data from '../data.json';
 
 export default function Products(props) {
+    const {handleSubmit} = props
   const [sort, setSort] = useState('asc');
   let { selectedSize } = props;
   let productList = [];
@@ -51,7 +52,7 @@ export default function Products(props) {
         </select>
       </div>
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <ul className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+        <ul className="mt-8 grid grid-cols-3 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {productList.map((product) => (
             <li key={product.id} className="mb-8">
               <div className="relative">
@@ -85,7 +86,9 @@ export default function Products(props) {
                 </div>
               </div>
               <div className="mt-6">
-                <button className=" w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 mx-auto text-sm font-medium text-gray-900 hover:bg-gray-200">
+                <button className=" w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 mx-auto text-sm font-medium text-gray-900 hover:bg-gray-200"
+                onClick={() => handleSubmit(product.id)}
+                >
                   Add to bag
                 </button>
               </div>
