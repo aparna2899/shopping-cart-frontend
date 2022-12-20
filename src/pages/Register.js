@@ -14,7 +14,7 @@ function Register() {
       try {
         const res = await axios({
           method: 'POST',
-          url: `https://shopping-cart-react-backend.herokuapp.com/api/users/register`,
+          url: `https://shopping-cart-backend.onrender.com/api/users/register`,
           headers: {
             'Content-Type': 'application/json',
           },
